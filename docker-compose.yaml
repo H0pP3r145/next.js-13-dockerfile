@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: ../ #your context (my -> project -> src,Docker,confings and more...)
+      dockerfile: ./Dockerfile.frontend # path to dockerfile FROM CONTEXT
+    restart: always
+    ports:
+      - "8080:8080"
