@@ -13,7 +13,7 @@ services:
       - target: 3000
         published: 3000-3002
     networks:
-      - "digiboo"
+      - "network"
 
   frontend_test:
     build:
@@ -23,7 +23,7 @@ services:
     ports:
       - "3010:3000"
     networks:
-      - "digiboo"
+      - "network"
 
   nginx:
     image: nginx:latest
@@ -35,7 +35,7 @@ services:
       - frontend
       - frontend_test
     networks:
-      - "digiboo"
+      - "network"
 
 networks:
   digiboo:
